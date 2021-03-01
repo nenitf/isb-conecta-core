@@ -19,6 +19,11 @@ sudo pecl install xdebug
 #sudo apt-get install php-xdebug
 #php -i | grep php.ini # ver onde está config do php
 #systemctl restart apache2 # reinicia o apache
+
+# XDebug windows
+# https://xdebug.org/download
+# https://xdebug.org/wizard
+# https://xdebug.org/docs/install#configure-php
 ```
 
 ### Criação
@@ -29,7 +34,7 @@ sudo pecl install xdebug
     - Funções de teste devem conter `testDeve**`, exemplo: `testDeveCadastrarPedido()`.
 
 - Convenções de *anotations*:
-    - `@testdox Renomeia classe ou método para output testdox` se necessário
+    - `@testdox` renomeia classe ou método para output testdox se necessário
     - `@todo` marca teste como arriscado, sinalizando para outros desenvolvedores que o teste está em desenvolvimento
     - `@ticket 123456` para métodos de teste que estão relacionados a uma issue no Github
 
