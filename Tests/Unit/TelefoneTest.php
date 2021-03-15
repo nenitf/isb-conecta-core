@@ -14,6 +14,7 @@ class TelefoneTest extends \PHPUnit\Framework\TestCase
     public function testDeveFalharComErroAmigavel($mensagem, $ddd, $numero) {
         try {
             $t = new Telefone($ddd, $numero);
+            $this->fail('Deve cair no catch');
         } catch (ValidationException $e) {
             $this->assertEquals($mensagem, $e->mensagemAmigavel());
         }
