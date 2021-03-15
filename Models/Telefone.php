@@ -2,7 +2,7 @@
 
 namespace Core\Models;
 
-use Core\Exceptions\ValidationException;
+use Core\Exceptions\Validations\ValidationException;
 
 class Telefone
 {
@@ -21,7 +21,7 @@ class Telefone
 
     public function setNumero(string $numero) {
         if(strlen($numero) != 8 && strlen($numero) != 9) {
-            throw ValidationException("telefone", "deve possuir entre 8 e 9 dígitos");
+            throw new ValidationException("telefone", "deve possuir entre 8 e 9 dígitos", $numero);
         }
         $this->numero = $numero;
         return $this;
@@ -33,7 +33,7 @@ class Telefone
 
     public function setDdd(string $ddd) {
         if(strlen($ddd) != 2) {
-            throw ValidationException("ddd", "deve possuir 2 dígitos");
+            throw new ValidationException("ddd", "deve possuir 2 dígitos", $ddd);
         }
         $this->ddd = $ddd;
         return $this;
