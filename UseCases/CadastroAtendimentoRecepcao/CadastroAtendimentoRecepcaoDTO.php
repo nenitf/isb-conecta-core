@@ -16,6 +16,6 @@ class CadastroAtendimentoRecepcaoDTO
 
     public function valida()
     {
-        throw new NotPresentException('Atendimento', 'é um campo obrigatório', '');
+        throw new NotPresentException('Atendimento', '');
     }
 }
