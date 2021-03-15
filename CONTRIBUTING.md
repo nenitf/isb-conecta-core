@@ -27,6 +27,8 @@ Lembre de explicar o cenário do bug/feature.
      ```
 
 5. *Commite* suas mudanças usando a [convenção de commits](https://gist.github.com/nenitf/1cf5182bff009974bf436f978eea1996#emojicom)
+    - Escopos disponíveis:
+        - `recepcao/atendimento` :new: :bug: :100: :cop:
 
 6. Atualize sua branch de acordo com o *upstream*, corrija conflitos se necessário.
     ```sh
