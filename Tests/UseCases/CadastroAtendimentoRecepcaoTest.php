@@ -48,7 +48,7 @@ class CadastroAtendimentoRecepcaoTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @dataProvider Core\Tests\UseCases\CadastroAtendimentoRecepcaoDataProviders\DeveFalharComException::earlyExceptions()
+     * @dataProvider Core\Tests\UseCases\CadastroAtendimentoRecepcaoDataProviders\DeveFalharComException::earlyExceptions
      */
     public function testDeveFalharComErroAmigavel($mensagem, $dto) {
         $sut = $this->newSut();
@@ -60,34 +60,4 @@ class CadastroAtendimentoRecepcaoTest extends \PHPUnit\Framework\TestCase
             $this->assertEquals($mensagem, $e->mensagemAmigavel());
         }
     }
-
-    //public function testDevePersistir() {
-    //    $sut = $this->newSut();
-
-    //    $atendimento = new AtendimentoRecepcao();
-
-    //    $atendimento->id = 1;
-    //    $atendimento->data = \DateTime::createFromFormat('Y-m-d', '2021-01-25');
-    //    $atendimento->onde = 1;
-    //    $atendimento->nomePessoa = 'Eduardo Silva';
-    //    $atendimento->contato = '5199999999';
-    //    $atendimento->relato = 'etc etc etc';
-
-    //    $dto = $this->newDTO();
-
-    //    $dto->usuario               = $atendimento->data;
-    //    $dto->data                  = $atendimento->onde;
-    //    $dto->onde                  = $atendimento->nomePessoa;
-    //    $dto->nomePessoaAtendida    = $atendimento->contato;
-    //    $dto->contato               = $atendimento->contato;
-    //    $dto->relato                = $atendimento->relato;
-
-    //    $this
-    //        ->doubleAtendimentosRecepcaoRepository
-    //        ->expects($this->once())
-    //        ->method('save')
-    //        ->willReturn($atendimento);
-
-    //    $sut->execute($dto);
-    //}
 }
