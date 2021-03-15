@@ -16,6 +16,10 @@ class CadastroAtendimentoRecepcaoDTO
 
     public function valida()
     {
-        throw new NotPresentException('Atendimento', '');
+        try{
+            $a = $this->atendimento;
+        } catch (\Error $e){
+            throw new NotPresentException('Atendimento', '');
+        }
     }
 }
