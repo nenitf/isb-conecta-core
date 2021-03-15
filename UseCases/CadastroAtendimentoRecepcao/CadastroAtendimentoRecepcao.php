@@ -18,8 +18,8 @@ class CadastroAtendimentoRecepcao
     {
         $dto->valida();
 
-        // $atendimento = new Atendimento();
-
-        // $this->atendimentosRecepcaoRepository->save($atendimento);
+        $this
+            ->atendimentosRecepcaoRepository
+            ->save($dto->atendimento);
     }
 }
