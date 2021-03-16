@@ -20,7 +20,7 @@ class Telefone
     }
 
     public function setNumero(string $numero) {
-        if(strlen($numero) != 8 && strlen($numero) != 9) {
+        if (preg_match('/^\d{8,9}$/', $numero) !== 1) {
             throw new ValidationException("telefone", "deve possuir entre 8 e 9 dígitos", $numero);
         }
         $this->numero = $numero;
@@ -32,14 +32,14 @@ class Telefone
     }
 
     public function setDdd(string $ddd) {
-        if(strlen($ddd) != 2) {
+        if (preg_match('/^\d{2}$/', $ddd) !== 1) {
             throw new ValidationException("ddd", "deve possuir 2 dígitos", $ddd);
         }
         $this->ddd = $ddd;
         return $this;
     }
 
-    public function formatado()
+    public function __toString(): string
     {
         return "({$this->ddd}) {$this->numero}";
     }
