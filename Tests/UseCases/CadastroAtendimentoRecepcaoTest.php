@@ -15,6 +15,8 @@ use Core\Models\{
 
 use Core\Contracts\Repositories\{
     IAtendimentosRecepcaoRepository,
+    IUsuariosRepository,
+    ILocaisAtendimentoRepository,
 };
 
 class CadastroAtendimentoRecepcaoTest extends \PHPUnit\Framework\TestCase
@@ -30,13 +32,23 @@ class CadastroAtendimentoRecepcaoTest extends \PHPUnit\Framework\TestCase
         $this->doubleAtendimentosRecepcaoRepository = $this->createMock(
             IAtendimentosRecepcaoRepository::class
         );
+
+        $this->doubleUsuariosRepository = $this->createMock(
+            IUsuariosRepository::class
+        );
+
+        $this->doubleLocaisAtendimentoRepository = $this->createMock(
+            ILocaisAtendimentoRepository::class
+        );
     }
 
     protected function newSut(?array $methodsToMock = null) {
         return $this
             ->getMockBuilder(CadastroAtendimentoRecepcao::class)
             ->setConstructorArgs([
-                $this->doubleAtendimentosRecepcaoRepository
+                $this->doubleAtendimentosRecepcaoRepository,
+                $this->doubleUsuariosRepository,
+                $this->doubleLocaisAtendimentoRepository,
             ])
             ->setMethods($methodsToMock)
             ->getMock();

@@ -2,11 +2,9 @@
 
 namespace Core\Contracts\Repositories;
 
-use Core\Models\{
-    AtendimentoRecepcao,
-};
+use Core\Models\Recepcao\Atendimento;
 
 interface IAtendimentosRecepcaoRepository
 {
-    public function save(AtendimentoRecepcao $a): AtendimentoRecepcao;
+    public function save(Atendimento $a): Atendimento;
 }

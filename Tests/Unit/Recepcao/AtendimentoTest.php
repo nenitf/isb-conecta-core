@@ -28,13 +28,13 @@ class AtendimentoTest extends \PHPUnit\Framework\TestCase
         yield 'usuário sem id' => [
             'Usuário é um campo obrigatório',
             [
-                null, new Usuario(null, "a"), date_create(), new LocalAtendimento(1, "p"), "R", new Telefone('51', '12345678'), "b"
+                null, new Usuario(null, "a", "s"), date_create(), new LocalAtendimento(1, "p"), "R", new Telefone('51', '12345678'), "b"
             ]
         ];
         yield 'local sem id' => [
             'Local é um campo obrigatório',
             [
-                null, new Usuario(1, "a"), date_create(), new LocalAtendimento(null, "p"), "R", new Telefone('51', '12345678'), "b"
+                null, new Usuario(1, "a", "s"), date_create(), new LocalAtendimento(null, "p"), "R", new Telefone('51', '12345678'), "b"
             ]
         ];
     }

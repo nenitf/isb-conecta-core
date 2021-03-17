@@ -42,8 +42,12 @@ class Atendimento
     }
 
     public function setUsuario($usuario) {
-        if(is_null($usuario->id)){
-            throw new NotPresentException("Usuário", $usuario->id);
+        try {
+            if(is_null($usuario->id)){
+                throw new NotPresentException("Usuário", '');
+            }
+        } catch (\Error $e) {
+            throw new NotPresentException("Usuário", '');
         }
         $this->usuario = $usuario;
         return $this;

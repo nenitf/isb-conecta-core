@@ -9,6 +9,13 @@ class Telefone
     private string $ddd;
     private string $numero;
 
+    public static function comNumeroCompleto(string $numeroCompleto): Telefone
+    {
+        $ddd = substr($numeroCompleto, 0, 2);
+        $numero = substr($numeroCompleto, 2, -1);
+        return new Telefone($ddd, $numero);
+    }
+
     public function __construct($ddd, $numero)
     {
         $this->setDdd($ddd);

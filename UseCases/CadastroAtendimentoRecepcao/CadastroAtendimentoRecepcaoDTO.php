@@ -7,19 +7,51 @@ use Core\Exceptions\Validations\{
     NotPresentException,
 };
 
-use Core\Models\Usuario\Usuario;
-use Core\Models\Recepcao\Atendimento;
-
 class CadastroAtendimentoRecepcaoDTO
 {
-    public Atendimento $atendimento;
+    public int $idUsuario;
+    public \DateTime $data;
+    public int $idLocalAtendimento;
+    public string $nomePessoaAtendida;
+    public string $contato;
+    public string $relato;
 
     public function valida()
     {
         try{
-            $a = $this->atendimento;
+            $a = $this->idUsuario;
         } catch (\Error $e){
-            throw new NotPresentException('Atendimento', '');
+            throw new NotPresentException('Usuário', '');
+        }
+
+        try{
+            $a = $this->data;
+        } catch (\Error $e){
+            throw new NotPresentException('Data', '');
+        }
+
+        try{
+            $a = $this->idLocalAtendimento;
+        } catch (\Error $e){
+            throw new NotPresentException('Local', '');
+        }
+
+        try{
+            $a = $this->nomePessoaAtendida;
+        } catch (\Error $e){
+            throw new NotPresentException('Nome atendida', '');
+        }
+
+        try{
+            $a = $this->contato;
+        } catch (\Error $e){
+            throw new NotPresentException('Contato', '');
+        }
+
+        try{
+            $a = $this->relato;
+        } catch (\Error $e){
+            throw new NotPresentException('Relato', '');
         }
     }
 }
