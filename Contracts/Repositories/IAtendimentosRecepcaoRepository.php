@@ -6,5 +6,5 @@ use Core\Models\Recepcao\Atendimento;
 
 interface IAtendimentosRecepcaoRepository
 {
-    public function save(Atendimento $a): Atendimento;
+    public function save(Atendimento $a): ?Atendimento;
 }

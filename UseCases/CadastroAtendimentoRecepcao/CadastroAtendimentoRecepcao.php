@@ -48,6 +48,6 @@ class CadastroAtendimentoRecepcao
 
         $this
             ->atendimentosRecepcaoRepository
-            ->save($dto->atendimento);
+            ->save($atendimento);
     }
 }

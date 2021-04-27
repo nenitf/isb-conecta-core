@@ -12,7 +12,7 @@ use Core\Exceptions\Validations\{
 
 class Atendimento
 {
-    public ?int $id;
+    protected ?int $id;
     private Usuario $usuario;
     public \DateTime $data;
     private LocalAtendimento $onde;
@@ -29,6 +29,7 @@ class Atendimento
         $contato,
         $relato
     ) {
+        $this->id = $id;
         $this->setUsuario($usuario);
         $this->setOnde($onde);
         $this->data = $data = $data;
@@ -37,13 +38,17 @@ class Atendimento
         $this->relato = $relato;
     }
 
+    public function getId() {
+        return $this->id;
+    }
+
     public function getUsuario() {
         return $this->usuario;
     }
 
     public function setUsuario($usuario) {
         try {
-            if(is_null($usuario->id)){
+            if(is_null($usuario->getId())){
                 throw new NotPresentException("Usuário", '');
             }
         } catch (\Error $e) {
@@ -57,8 +62,8 @@ class Atendimento
         return $this->onde;
     }
 
-    public function setOnde($onde) {
-        if(is_null($onde->id)){
+    public function setOnde(LocalAtendimento $onde) {
+        if(is_null($onde->getId())){
             throw new NotPresentException("local", $onde->id);
         }
         $this->onde = $onde;
