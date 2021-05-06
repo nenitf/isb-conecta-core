@@ -1,28 +1,20 @@
 <?php
 
-namespace Core\Models\Usuario;
+namespace Core\Models;
 
-use Core\Models\{
-    Email,
-    Setor,
-};
+use Core\Exceptions\Validations\ValidationException;
 
-class Usuario
+class Setor
 {
     protected ?int $id;
     protected string $nome;
-    protected string $senha; // criptografada
-    public Email $email;
-    public Setor $setor;
 
     public function __construct(
         $id,
-        $nome,
-        $senha
+        $nome
     ) {
         $this->id = $id;
         $this->nome = $nome;
-        $this->senha = $senha;
     }
 
     public function getId() {

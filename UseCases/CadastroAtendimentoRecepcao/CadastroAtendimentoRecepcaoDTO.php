@@ -21,37 +21,37 @@ class CadastroAtendimentoRecepcaoDTO
         try{
             $a = $this->idUsuario;
         } catch (\Error $e){
-            throw new NotPresentException('Usuário', '');
+            throw new NotPresentException('Usuário');
         }
 
         try{
             $a = $this->data;
         } catch (\Error $e){
-            throw new NotPresentException('Data', '');
+            throw new NotPresentException('Data');
         }
 
         try{
             $a = $this->idLocalAtendimento;
         } catch (\Error $e){
-            throw new NotPresentException('Local', '');
+            throw new NotPresentException('Local');
         }
 
         try{
             $a = $this->nomePessoaAtendida;
         } catch (\Error $e){
-            throw new NotPresentException('Nome atendida', '');
+            throw new NotPresentException('Nome atendida');
         }
 
         try{
             $a = $this->contato;
         } catch (\Error $e){
-            throw new NotPresentException('Contato', '');
+            throw new NotPresentException('Contato');
         }
 
         try{
             $a = $this->relato;
         } catch (\Error $e){
-            throw new NotPresentException('Relato', '');
+            throw new NotPresentException('Relato');
         }
     }
 }
