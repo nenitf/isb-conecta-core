@@ -9,6 +9,7 @@ use Core\Exceptions\Validations\{
 
 class CadastroUsuarioDTO
 {
+    public ?int $id;
     public string $nome;
     public string $senha;
     public string $email;

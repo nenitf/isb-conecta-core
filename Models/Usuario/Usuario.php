@@ -11,6 +11,7 @@ class Usuario
 {
     protected ?int $id;
     protected string $nome;
+    protected string $ativo;
     protected string $senha; // criptografada
     public Email $email;
     public Setor $setor;
@@ -35,5 +36,19 @@ class Usuario
 
     public function getSenha() {
         return $this->senha;
+    }
+
+    public function ativaUsuario() {
+        $this->ativo = true;
+        return $this;
+    }
+
+    public function inativaUsuario() {
+        $this->ativo = false;
+        return $this->senha;
+    }
+
+    public function getAtivo() {
+        return $this->ativo;
     }
 }

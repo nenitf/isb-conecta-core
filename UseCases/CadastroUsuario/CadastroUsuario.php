@@ -37,8 +37,10 @@ class CadastroUsuario
             ->cifrar($dto->senha);
 
         $usuario = new Usuario(
-            null, $dto->nome, $senhaCifrada
+            $dto->id, $dto->nome, $senhaCifrada
         );
+
+        $usuario->ativaUsuario();
 
         $email = new Email($dto->email);
 
