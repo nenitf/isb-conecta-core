@@ -12,7 +12,7 @@ class Telefone
     public static function comNumeroCompleto(string $numeroCompleto): Telefone
     {
         $ddd = substr($numeroCompleto, 0, 2);
-        $numero = substr($numeroCompleto, 2, -1);
+        $numero = substr($numeroCompleto, 2);
         return new Telefone($ddd, $numero);
     }
 
