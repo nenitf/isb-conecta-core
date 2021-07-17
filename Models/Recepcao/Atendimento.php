@@ -32,7 +32,7 @@ class Atendimento
         $this->id = $id;
         $this->setUsuario($usuario);
         $this->setOnde($onde);
-        $this->data = $data = $data;
+        $this->data = $data;
         $this->nomePessoaAtendida = $nomePessoaAtendida;
         $this->contato = $contato;
         $this->relato = $relato;
